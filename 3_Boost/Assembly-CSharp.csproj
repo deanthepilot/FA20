@@ -55,7 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Temp.cs" />
+     <Compile Include="Assets\Rocket.cs" />
  <Reference Include="UnityEngine">
  <HintPath>G:/Unity/Hub/Editor/2019.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -122,6 +122,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &682605433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4680437954553870342, guid: 502a8df1ffb3c004e80f75db8a3f8c4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7075497632340966271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &682605435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682605433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a451021cb5a3d6418b38648e39fb3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 20, y: -10, z: 0}
+  period: 2
 --- !u!1001 &687145615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -564,6 +584,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4680437954553870342, guid: 502a8df1ffb3c004e80f75db8a3f8c4e,
+        type: 3}
+      propertyPath: m_Name
+      value: BlockingObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7075497631565501654, guid: 502a8df1ffb3c004e80f75db8a3f8c4e,
         type: 3}
       propertyPath: m_LocalPosition.x

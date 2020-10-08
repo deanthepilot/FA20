@@ -5,6 +5,12 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainThrust = 250f;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] AudioClip death;
+    [SerializeField] AudioClip success;
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] ParticleSystem successParticles;
     enum State { Alive, Dying, Trancending };
     State state = State.Alive;
     Rigidbody rigidBody;
@@ -21,12 +27,12 @@ public class Rocket : MonoBehaviour
     {
         if ( state == State.Alive)
         {
-            Thrust();
-            Rotate();
+            RespondToThrustInput();
+            RespondToRotateInput();
         }        
     }
     
-    private void Rotate()
+    private void RespondToRotateInput()
     {
         float rotationThisFrame = rcsThrust * Time.deltaTime;
         rigidBody.freezeRotation = true;
@@ -42,22 +48,35 @@ public class Rocket : MonoBehaviour
         rigidBody.freezeRotation = false;
     }
 
-    private void Thrust()
+    private void RespondToThrustInput()
     {
         float thrustThisFrame = mainThrust * Time.deltaTime;
+        ApplyThrust(thrustThisFrame);
+    }
+
+    private void ApplyThrust(float thrustThisFrame)
+    {
         if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
+                
+            }
+            if (!mainEngineParticles.isPlaying)
+            {
+                mainEngineParticles.Play();
+
             }
         }
         else
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
+
     void OnCollisionEnter(Collision collision)
     {
         if(state != State.Alive) { return; }
@@ -68,16 +87,32 @@ public class Rocket : MonoBehaviour
                 break;
             case "Finish":
                 // Go to next level                
-                state = State.Trancending;
-                Invoke("LoadNextLevel", 3f);
+                StartSuccessSequence();
                 break;
             default:
                 // die
-                state = State.Dying;
-                Invoke("LoadFirstLevel", 3f);
+                StartDeathSequence();
                 break;
         }
 
+    }
+
+    private void StartDeathSequence()
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot(death);
+        deathParticles.Play();
+        state = State.Dying;
+        Invoke("LoadFirstLevel", 3f);
+    }
+
+    private void StartSuccessSequence()
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot(success);
+        successParticles.Play();
+        state = State.Trancending;
+        Invoke("LoadNextLevel", 3f);
     }
 
     private void LoadFirstLevel()

@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sunlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2446,7 +2446,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8812865072760181937}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1237575600
 AudioSource:
@@ -8698,6 +8698,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 6738334353225584478, guid: 5ae0302b424c8fa46b22e60e200a0f64,
+        type: 3}
+      propertyPath: controlRollFactor
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844283525879767603, guid: 5ae0302b424c8fa46b22e60e200a0f64,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae0302b424c8fa46b22e60e200a0f64, type: 3}

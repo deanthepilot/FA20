@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float positionYawFactor = 5.5f;
     [SerializeField] float controlYawFactor = 5.5f;
     [SerializeField] float controlRollFactor = -8f;
-    [SerializeField] float levelLoadDelay = 1f;
     float xThrow, yThrow;
 
     bool isControlEnabled = true;

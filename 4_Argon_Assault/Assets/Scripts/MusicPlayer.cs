@@ -5,8 +5,21 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{
+    //    DontDestroyOnLoad(gameObject);
+    //}
+
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-    }    
+        int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
+        if(numMusicPlayers  > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 }

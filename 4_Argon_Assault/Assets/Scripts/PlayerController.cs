@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     bool isControlEnabled = true;
 
-
+    [SerializeField] GameObject[] guns;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,20 @@ public class PlayerController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
+    }
+
+    void ProcessFiring()
+    {
+        bool enableGun = CrossPlatformInputManager.GetAxis("Fire 1") > Mathf.Epsilon;
+        {
+            //print("Number of guns is " + guns.Length);
+            foreach(GameObject gun in guns)
+            {
+                gun.SetActive(enableGun);
+            }
+        };
     }
 
     void OnPlayerDeath()

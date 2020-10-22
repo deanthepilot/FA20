@@ -141,7 +141,7 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            AppyThrust();
+            ApplyThrust();
         }
         else
         {
@@ -150,7 +150,7 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    private void AppyThrust()
+    private void ApplyThrust()
     {
         float thrustThisFrame = mainThrust * Time.deltaTime;
         rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);  //  add thrust

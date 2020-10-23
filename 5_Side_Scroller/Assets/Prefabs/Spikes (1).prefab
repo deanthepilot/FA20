@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7587785650589265120}
   - component: {fileID: 9208938180508828904}
   - component: {fileID: 8059675537055093701}
+  - component: {fileID: 3584138264035595540}
   m_Layer: 0
   m_Name: spike (1)
   m_TagString: Untagged
@@ -113,6 +114,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3584138264035595540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222194445180388631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.020000005, z: 0.022716219}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0.0013581075}
 --- !u!1 &5933474859730472231
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +138,7 @@ GameObject:
   - component: {fileID: 6421076842408728477}
   - component: {fileID: 7976970927366559800}
   - component: {fileID: 5284714139080305906}
+  - component: {fileID: 5734297816043027693}
   m_Layer: 0
   m_Name: spike
   m_TagString: Untagged
@@ -192,6 +207,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5734297816043027693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933474859730472231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.020000005, z: 0.022716219}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0.0013581075}
 --- !u!1 &7078968834727697801
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +231,7 @@ GameObject:
   - component: {fileID: 7810566936325924049}
   - component: {fileID: 1785890594554194317}
   - component: {fileID: 7573293140824958114}
+  - component: {fileID: 6887668001137645022}
   m_Layer: 0
   m_Name: spike (3)
   m_TagString: Untagged
@@ -271,6 +300,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6887668001137645022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078968834727697801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.020000005, z: 0.022716219}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0.0013581075}
 --- !u!1 &8468563062001635040
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +324,7 @@ GameObject:
   - component: {fileID: 3323708654524996691}
   - component: {fileID: 2239302580975073753}
   - component: {fileID: 7842541167368698990}
+  - component: {fileID: 3910663290419968129}
   m_Layer: 0
   m_Name: spike (2)
   m_TagString: Untagged
@@ -350,3 +393,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3910663290419968129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468563062001635040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.020000005, z: 0.022716219}
+  m_Center: {x: 0, y: 0.000000029802322, z: 0.0013581075}

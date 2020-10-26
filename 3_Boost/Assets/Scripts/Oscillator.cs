@@ -6,7 +6,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class Oscillator : MonoBehaviour
 {
-    [SerializeField] Vector3 movementVector = new Vector3(10f, 10f, 10f);
+    [SerializeField] Vector3 movementVector = new Vector3(10f, 0f, 0f);
     [SerializeField] float period = 2f; // default period is 2 seconds
     [Range(0, 1)] // You can have more than one attribute on a variable
     float movementFactor;

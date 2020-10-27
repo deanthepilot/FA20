@@ -107,6 +107,6 @@ public class PlayerMovement : MonoBehaviour
     void LoadFirstLevel()
     {
         state = State.Alive;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

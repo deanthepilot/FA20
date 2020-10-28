@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     bool collisionsDisabled = false;
     enum State { Placeholder, Alive, Dying, Transcending }
     State state = State.Alive;
-
 
 
     void Start()
@@ -85,9 +85,12 @@ public class PlayerMovement : MonoBehaviour
                 StartDeathSequence();
                 break;
         }
+
+
+
     }
 
-    void StartDeathSequence()
+        void StartDeathSequence()
     {
         audioSource.Stop();
         audioSource.PlayOneShot(death);
@@ -102,11 +105,23 @@ public class PlayerMovement : MonoBehaviour
         audioSource.PlayOneShot(success);
         successParticles.Play();
         state = State.Transcending;
+        Invoke("LoadNextLevel", levelLoadDelay);
     }
 
     void LoadFirstLevel()
     {
         state = State.Alive;
         SceneManager.LoadScene(1);
+    }
+    void LoadNextLevel()
+    {
+        state = State.Alive;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }

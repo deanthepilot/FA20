@@ -5,12 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject player;
     enum State { Placeholder, Alive, Dying, Transcending }
     State state = State.Alive;
     // Start is called before the first frame update
     void Start()
     {
         enemy = GameObject.Find("Enemy");
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -19,14 +21,13 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject == player)
         {
             state = State.Alive;
             print("collision");
             Destroy(enemy);
         }
-        else { return; }
     }
 }

@@ -80,14 +80,19 @@ public class PlayerMovement : MonoBehaviour
                 print("Finish");
                 StartSuccessSequence();
                 break;
+            case "Bad":
+                print("Enemy Hit");
+                StartDeathSequence();
+                break;
+            case "Spike":
+                print("Spike Hit");
+                StartDeathSequence();
+                break;
             default:
                 print("Death");
                 StartDeathSequence();
                 break;
         }
-
-
-
     }
 
         void StartDeathSequence()

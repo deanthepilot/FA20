@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float jumpForce = 1500f;
+    [SerializeField] float jumpForce = 500f;
     [SerializeField] float speed = 10f;
     [SerializeField] float levelLoadDelay = 3f;
     [SerializeField] ParticleSystem deathParticles;

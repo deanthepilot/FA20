@@ -5,6 +5,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    bool toggle = true;
     private void Awake()
     {
         int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
@@ -16,5 +17,19 @@ public class MusicPlayer : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+    public void Toggle()
+    {
+        if (toggle)
+        {
+            gameObject.SetActive(false);
+            toggle = false;
+        }
+        else 
+        {
+            gameObject.SetActive(true);
+            toggle = true;
+        }
+        print("toggle");
     }
 }

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip success;
+    MusicPlayer music;
     AudioSource audioSource;
     Rigidbody rb;
     bool isGrounded;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        music = FindObjectOfType<MusicPlayer>();
     }
     void OnCollisionStay()
     {
@@ -42,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerJump();
             PlayerMove();
+            MusicToggle();
+        }
+    }    
+    private void MusicToggle()
+    {
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            music.Toggle();
         }
     }
 
@@ -129,4 +139,5 @@ public class PlayerMovement : MonoBehaviour
         }
         SceneManager.LoadScene(nextSceneIndex);
     }
+    
 }

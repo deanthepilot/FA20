@@ -6,12 +6,12 @@ public class Enemy : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject player;
+    [SerializeField] public int scorePerKill = 10;
     enum State { Placeholder, Alive, Dying, Transcending }
     State state = State.Alive;
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.Find("Enemy");
         player = GameObject.Find("Player");
     }
 
@@ -26,8 +26,10 @@ public class Enemy : MonoBehaviour
         if (other.gameObject == player)
         {
             state = State.Alive;
-            print("collision");
-            Destroy(enemy);
+            ScoreBoard scoreBoard = FindObjectOfType<ScoreBoard>();
+            scoreBoard.ScoreHit(scorePerKill);
+            print("collision");             
+            Destroy(enemy);            
         }
-    }
+    }    
 }
